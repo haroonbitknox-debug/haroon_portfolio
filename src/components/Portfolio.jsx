@@ -19,39 +19,43 @@ function Portfolio() {
     <Router>
       <div className="d-flex flex-column min-vh-100">
         {/* HEADER */}
-        <header className="container-fluid d-flex align-items-center text-center sticky-top bg-white shadow-lg p-3">
+        <header className="container-fluid sticky-top bg-white shadow-lg py-3">
+  <nav className="container d-flex justify-content-center align-items-center flex-wrap">
+    <Link to="/" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center">
+      Home <FaHouse className="mx-1 fs-5" />
+    </Link>
 
-          <div className="container">
-          <Link to="/" className="text-dark fw-bold link-danger text-decoration-none mx-5">
-            Home <FaHouse className="mx-1 fs-5" />
-          </Link>
+    <Link to="/about" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center">
+      About <FaInfoCircle className="mx-1 fs-5" />
+    </Link>
 
-          <Link to="/about" className="text-dark fw-bold link-danger text-decoration-none mx-5">
-            About <FaInfoCircle className="mx-1 fs-5" />
-          </Link>
+    <Link to="/resume" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center">
+      Resume <FaUser className="mx-1 fs-5" />
+    </Link>
 
-          <Link to="/resume" className="text-dark fw-bold link-danger text-decoration-none mx-5">
-            Resume <FaUser className="mx-1 fs-5" />
-          </Link>
+    <Link to="/skills" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center">
+      Skills <ImPower className="mx-1 fs-5" />
+    </Link>
 
-          <Link to="/skills" className="text-dark fw-bold link-danger text-decoration-none mx-5">
-            Skills <ImPower className="mx-1 fs-5" />
-          </Link>
+    <Link to="/projects" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center">
+      Projects <FaStackExchange className="mx-1 fs-5" />
+    </Link>
 
-          <Link to="/projects" className="text-dark fw-bold link-danger text-decoration-none mx-5">
-            Projects <FaStackExchange className="mx-1 fs-5" />
-          </Link>
+    <Link to="/contact" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center">
+      Contact <FaPhone className="mx-1 fs-5" />
+    </Link>
 
-          <Link to="/contact" className="text-dark fw-bold link-danger text-decoration-none mx-5">
-            Contact <FaPhone className="mx-1 fs-5" />
-          </Link>
+    <a
+      href="https://github.com/haroonbitknox-debug"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="d-flex align-items-center mx-3"
+    >
+      <img src={github} alt="GitHub" style={{ width: "35px" }} />
+    </a>
+  </nav>
+</header>
 
-          <a href="https://github.com/haroonbitknox-debug" target="_blank" rel="noopener noreferrer">
-            <img src={github} className="px-5" />
-          </a>
-
-       </div>
-        </header>
 
         {/* MAIN CONTENT */}
         <main className="flex-grow-1">
