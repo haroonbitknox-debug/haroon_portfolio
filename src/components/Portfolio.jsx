@@ -13,35 +13,37 @@ import Contact from './pages/Contact'
 import Projects from './pages/Projects'
 import Skills from './pages/Skills'
 import Resume from './pages/Resume'
+import '../../src/style.css'
+
 
 function Portfolio() {
   return (
     <Router>
       <div className="d-flex flex-column min-vh-100">
         {/* HEADER */}
-        <header className="container-fluid sticky-top bg-white shadow-lg py-3">
+        <header className="container-fluid sticky-top bg-white shadow-lg py-3 ">
   <nav className="container d-flex justify-content-center align-items-center flex-wrap">
-    <Link to="/" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center">
+    <Link to="/" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center px-4 link-hover">
       Home <FaHouse className="mx-1 fs-5" />
     </Link>
 
-    <Link to="/about" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center">
+    <Link to="/about" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center px-4 link-hover">
       About <FaInfoCircle className="mx-1 fs-5" />
     </Link>
 
-    <Link to="/resume" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center">
+    <Link to="/resume" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center px-4 link-hover">
       Resume <FaUser className="mx-1 fs-5" />
     </Link>
 
-    <Link to="/skills" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center">
+    <Link to="/skills" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center px-4 link-hover">
       Skills <ImPower className="mx-1 fs-5" />
     </Link>
 
-    <Link to="/projects" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center">
+    <Link to="/projects" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center px-4 link-hover">
       Projects <FaStackExchange className="mx-1 fs-5" />
     </Link>
 
-    <Link to="/contact" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center">
+    <Link to="/contact" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center px-4 link-hover">
       Contact <FaPhone className="mx-1 fs-5" />
     </Link>
 
@@ -49,7 +51,7 @@ function Portfolio() {
       href="https://github.com/haroonbitknox-debug"
       target="_blank"
       rel="noopener noreferrer"
-      className="d-flex align-items-center mx-3"
+      className="d-flex align-items-center mx-3 px-4"
     >
       <img src={github} alt="GitHub" style={{ width: "35px" }} />
     </a>
