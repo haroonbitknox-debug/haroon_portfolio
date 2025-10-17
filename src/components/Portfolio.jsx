@@ -6,7 +6,8 @@ import { FaPhone } from "react-icons/fa6";
 import { FaUser } from "react-icons/fa";
 import { ImPower } from "react-icons/im";
 import { FaHouse } from "react-icons/fa6";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { FaBars } from "react-icons/fa6";
+import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -14,48 +15,39 @@ import Projects from './pages/Projects'
 import Skills from './pages/Skills'
 import Resume from './pages/Resume'
 import '../../src/style.css'
-
+import { useState } from "react";
 
 function Portfolio() {
+const [menuOpen, setMenuOpen] = useState(false);
   return (
     <Router>
       <div className="d-flex flex-column min-vh-100">
         {/* HEADER */}
-        <header className="container-fluid sticky-top bg-white shadow-lg py-3 ">
-  <nav className="container d-flex justify-content-center align-items-center flex-wrap">
-    <Link to="/" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center px-4 link-hover">
-      Home <FaHouse className="mx-1 fs-5" />
-    </Link>
+        <header className="navbar-container-fluid sticky-top bg-white shadow-lg p-3 ">
+        <div className="navbar-content container d-flex justify-content-between align-items-center ">
 
-    <Link to="/about" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center px-4 link-hover">
-      About <FaInfoCircle className="mx-1 fs-5" />
-    </Link>
+        {/* Hamburger Icon (visible on mobile) */}
+        <div className="hamburger d-lg-none" onClick={() => setMenuOpen(!menuOpen)}>
+          <FaBars className="fs-3 text-dark" />
+        </div>
 
-    <Link to="/resume" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center px-4 link-hover">
-      Resume <FaUser className="mx-1 fs-5" />
-    </Link>
+          <nav className={`nav-links align-items-center flex-wrap ${menuOpen ? "open" : ""}`}>
 
-    <Link to="/skills" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center px-4 link-hover">
-      Skills <ImPower className="mx-1 fs-5" />
-    </Link>
 
-    <Link to="/projects" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center px-4 link-hover">
-      Projects <FaStackExchange className="mx-1 fs-5" />
-    </Link>
 
-    <Link to="/contact" className="text-dark fw-bold text-decoration-none mx-3 d-flex align-items-center px-4 link-hover">
-      Contact <FaPhone className="mx-1 fs-5" />
-    </Link>
+          <NavLink to="/" className="nav-item px-5 mx-2" onClick={() => setMenuOpen(false)}>Home <FaHouse  /></NavLink>
+          <NavLink to="/about" className="nav-item px-5 mx-2" onClick={() => setMenuOpen(false)}>About <FaInfoCircle  /></NavLink>
+          <NavLink to="/resume" className="nav-item px-5 mx-2" onClick={() => setMenuOpen(false)}>Resume <FaUser  /></NavLink>
+          <NavLink to="/skills" className="nav-item px-5 mx-2" onClick={() => setMenuOpen(false)}>Skills <ImPower  /></NavLink>
+          <NavLink to="/projects" className="nav-item px-5 mx-2" onClick={() => setMenuOpen(false)}>Projects <FaStackExchange className="mx-1" /></NavLink>
+          <NavLink to="/contact" className="nav-item" onClick={() => setMenuOpen(false)}>Contact <FaPhone  /></NavLink>
+        </nav>
 
-    <a
-      href="https://github.com/haroonbitknox-debug"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="d-flex align-items-center mx-3 px-4"
-    >
-      <img src={github} alt="GitHub" style={{ width: "35px" }} />
-    </a>
-  </nav>
+        {/* GitHub Icon */}
+        <a href="https://github.com/haroonbitknox-debug" target="_blank" rel="noopener noreferrer">
+          <img src={github} alt="GitHub" className="github-icon" />
+        </a>
+      </div>
 </header>
 
 

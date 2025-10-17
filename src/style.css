@@ -3,3 +3,92 @@
   transition: color 0.3s ease;
   transform: scale(1.05);
 }
+
+/* === Navbar Base === */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.nav-item {
+  color: #212529;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #0dcaf0;
+}
+
+.nav-item.active {
+  color: #0d6efd;
+  border-bottom: 2px solid #0dcaf0;
+}
+
+.github-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.github-icon:hover {
+  transform: scale(1.1);
+}
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+}
+
+/* === Responsive Navbar (for mobile) === */
+@media (max-width: 991px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: white;
+    border-top: 1px solid #ddd;
+    padding: 1rem 0;
+    text-align: center;
+    display: none; /* hidden by default */
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    display: flex; /* shown only when menuOpen is true */
+  }
+
+  .nav-item {
+    padding: 10px 0;
+    font-size: 1.1rem;
+  }
+
+  .hamburger {
+    display: block; /* show only on small screens */
+  }
+
+  .github-icon {
+    width: 35px;
+  }
+}
+.tech-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+li:hover .tech-logo {
+  transform: scale(1.2);
+}
+
+li:hover {
+  background-color: #fff3cd; /* light yellow highlight */
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}

@@ -19,30 +19,96 @@ import sass from "../../assets/sass.svg";
 import sql from "../../assets/sql.svg";
 function Skills() {
   return (
-    <div>
-      <div className="m-5 p-5 text-center">
-              <h1 className="fw-bold py-3">
-                My Super Powers <b className="text-warning">.</b>
-              </h1>
-              <img src={js} className="px-5" />
-              <img src={github} className="px-5" />
-              <img src={firebase} className="px-5" />
-              <img src={tailwind} className="px-5" />
-              <img src={graphql} className="px-5" />
-              <img src={npm} className="px-5" />
-              <img src={react} className="px-5 m-4" />
-              <img src={redux} className="px-5 my-5" />
-              <img src={html} className="px-5" />
-              <img src={css} className="px-5 mx-5" />
-              <img src={bootstrap} className="px-5" />
-              <img src={materialui} className="px-5" />
-              <img src={jquery} className="px-5" />
-              <img src={pnpm} className="px-5" />
-              <img src={sass} className="px-5" />
-              <img src={sql} className="px-5 mx-4" />
+    <div className="container my-5 p-5">
+  <div className="text-center">
+    <h1 className="fw-bold py-3 mb-5">
+      My Super Powers <b className="text-warning">.</b>
+    </h1>
 
-            </div>
-    </div>
+    <ul className="list-unstyled d-flex flex-wrap justify-content-center gap-5">
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>HTML</b>
+        <img src={html} alt="HTML" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>CSS</b>
+        <img src={css} alt="CSS" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>JavaScript</b>
+        <img src={js} alt="JavaScript" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>React</b>
+        <img src={react} alt="React" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>Redux</b>
+        <img src={redux} alt="Redux" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>Tailwind</b>
+        <img src={tailwind} alt="Tailwind" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>Bootstrap</b>
+        <img src={bootstrap} alt="Bootstrap" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>SASS</b>
+        <img src={sass} alt="SASS" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>SQL</b>
+        <img src={sql} alt="SQL" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>GitHub</b>
+        <img src={github} alt="GitHub" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>Firebase</b>
+        <img src={firebase} alt="Firebase" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>GraphQL</b>
+        <img src={graphql} alt="GraphQL" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>NPM</b>
+        <img src={npm} alt="NPM" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>Material UI</b>
+        <img src={materialui} alt="Material UI" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>jQuery</b>
+        <img src={jquery} alt="jQuery" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>PNPM</b>
+        <img src={pnpm} alt="PNPM" className="tech-logo" />
+      </li>
+    </ul>
+  </div>
+</div>
+
   )
 }
 

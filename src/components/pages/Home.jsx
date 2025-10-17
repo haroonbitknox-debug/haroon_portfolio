@@ -8,25 +8,26 @@ function Home() {
     <>
 
       {/* Qualification Section (Image Left + Text Right) */}
-      <div className="container my-5">
-        <h1 className="fw-bold my-4 mx-1">
+      <div className="container my-3  ">
+        <h1 className="fw-bold my-2 mx-1">
           Qualification <b className="text-warning">.</b>
         </h1>
 
 
         <div className="d-flex flex-wrap justify-content-between align-items-start">
           {/* LEFT SIDE (Image) */}
-          <div className="text-center order-1 order-md-0 mb-4 mb-md-0">
+          <div className="text-center order-1 order-md-0 mb-4 mb-md-0 ">
             <img
               src={edu}
               alt="Education"
-              className="rounded w-100 "
-              style={{ maxWidth: '350px' }}
+              style={{ maxWidth: '450px' }}
+              className='img-flex'
+
             />
           </div>
           {/* RIGHT SIDE (Text) */}
-          <div className=" flex-end mt-4 px-5 mx-5">
-            {/* Qualification 1 */}
+          <div className=" flex-end py-5 my-3">
+
             <div className="d-flex align-items-center mb-2 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -129,8 +130,8 @@ function Home() {
       <img
         src={story}
         alt="My Story"
-        className="img-fluid rounded shadow-sm"
-        style={{ maxWidth: '300px' }}
+        className="img-flex"
+        style={{ maxWidth: '450px' }}
       />
     </div>
   </div>
