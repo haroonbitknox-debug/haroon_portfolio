@@ -51,7 +51,7 @@
     left: 0;
     right: 0;
     flex-direction: column;
-    background: white;
+    background: hsl(0, 0%, 80%);
     border-top: 1px solid #ddd;
     padding: 1rem 0;
     text-align: center;
@@ -87,8 +87,3 @@ li:hover .tech-logo {
   transform: scale(1.2);
 }
 
-li:hover {
-  background-color: #fff3cd; /* light yellow highlight */
-  transform: translateY(-3px);
-  transition: all 0.3s ease;
-}
