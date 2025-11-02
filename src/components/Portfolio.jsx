@@ -64,7 +64,7 @@ const [menuOpen, setMenuOpen] = useState(false);
         </main>
 
         {/* FOOTER */}
-        <footer className="bg-white  text-white p-3 text-center shadow-lg">
+        <footer className="bg-white text-white p-3 text-center shadow-lg">
           <b className="text-danger">© 2025 </b>
           <b className="text-dark">All Rights Reserved.</b>
         </footer>
