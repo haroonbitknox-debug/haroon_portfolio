@@ -48,7 +48,7 @@ function Home() {
                 Bachelor's of Science (Computer Science)
               </h5>
             </div>
-            <p className="mx-5 text-secondary">Virtual University of Pakistan, 2025</p>
+            <p className="mx-5 text-secondary">Virtual University of Pakistan, 2026</p>
 
             {/* Qualification 2 */}
             <div className="d-flex align-items-center mb-2">
@@ -112,11 +112,11 @@ function Home() {
         for people. I’m currently interning at BitKnox Global, where I’m gaining real-world
         experience in modern web development practices.
         <br /><br />
-        Alongside this, I’m sharpening my front-end expertise through a React.js course at
+        {/* Alongside this, I’m sharpening my front-end expertise through a React.js course at
         Bano Qabil, continuously learning to build fast, responsive, and visually appealing
         applications. My journey in tech started with curiosity and has evolved into a mission —
         to craft digital experiences that are both functional and inspiring.
-        <br /><br />
+        <br /><br /> */}
         Beyond coding, I’m also enjoying my hobbies, where I aim to always remain fit.
         Reading financial books and gaining knowledge about the stock exchange is my passion.
         I love music, and guitar has been my friend for over 4 years now. I believe in maintaining

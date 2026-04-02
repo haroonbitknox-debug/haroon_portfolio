@@ -37,7 +37,7 @@ const [menuOpen, setMenuOpen] = useState(false);
 
           <NavLink to="/" className="nav-item px-5 mx-2" onClick={() => setMenuOpen(false)}>Home <FaHouse  /></NavLink>
           <NavLink to="/about" className="nav-item px-5 mx-2" onClick={() => setMenuOpen(false)}>About <FaInfoCircle  /></NavLink>
-          <NavLink to="/resume" className="nav-item px-5 mx-2" onClick={() => setMenuOpen(false)}>Resume <FaUser  /></NavLink>
+          <NavLink to="/resume" className="nav-item px-5 mx-2" onClick={() => setMenuOpen(false)}>Experience <FaUser  /></NavLink>
           <NavLink to="/skills" className="nav-item px-5 mx-2" onClick={() => setMenuOpen(false)}>Skills <ImPower  /></NavLink>
           <NavLink to="/projects" className="nav-item px-5 mx-2" onClick={() => setMenuOpen(false)}>Projects <FaStackExchange className="mx-1" /></NavLink>
           <NavLink to="/contact" className="nav-item" onClick={() => setMenuOpen(false)}>Contact <FaPhone  /></NavLink>
@@ -65,7 +65,7 @@ const [menuOpen, setMenuOpen] = useState(false);
 
         {/* FOOTER */}
         <footer className="bg-white text-white p-3 text-center shadow-lg">
-          <b className="text-danger">© 2025 </b>
+          <b className="text-danger">© 2026 </b>
           <b className="text-dark">All Rights Reserved.</b>
         </footer>
       </div>

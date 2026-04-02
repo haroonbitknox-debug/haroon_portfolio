@@ -1,6 +1,12 @@
-
-
 import js from '../../assets/js.svg'
+import php from '../../assets/php.png'
+import laravel from '../../assets/laravel.png'
+import python from '../../assets/python.jfif'
+import node from '../../assets/node.png'
+import django from '../../assets/django.png'
+import mongo from '../../assets/mongo.png'
+import mysql from '../../assets/mysql.png'
+import postman from '../../assets/postman.png'
 import github from "../../assets/github.svg";
 import firebase from "../../assets/firebase.svg";
 import tailwind from "../../assets/tailwind.svg";
@@ -19,7 +25,7 @@ import sass from "../../assets/sass.svg";
 import sql from "../../assets/sql.svg";
 function Skills() {
   return (
-    <div className="container my-5 p-5">
+    <div className="container  p-5">
   <div className="text-center">
     <h1 className="fw-bold py-3 mb-5">
       My Super Powers <b className="text-warning">.</b>
@@ -44,6 +50,46 @@ function Skills() {
       <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
         <b>React</b>
         <img src={react} alt="React" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>Php</b>
+        <img src={php} alt="React" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>Laravel</b>
+        <img src={laravel} alt="React" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>Python</b>
+        <img src={python} alt="React" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>Django</b>
+        <img src={django} alt="React" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>Node JS</b>
+        <img src={node} alt="React" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>MongoDB</b>
+        <img src={mongo} alt="React" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>MySql</b>
+        <img src={mysql} alt="React" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>Postman</b>
+        <img src={postman} alt="React" className="tech-logo" />
       </li>
 
       <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
