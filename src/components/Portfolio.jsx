@@ -14,6 +14,10 @@ import Contact from './pages/Contact'
 import Projects from './pages/Projects'
 import Skills from './pages/Skills'
 import Resume from './pages/Resume'
+import Other_Projects from "./pages/Other_Projects";
+import Company_Projects from "./pages/Company_Projects";
+import JS_Projects from "./pages/JS_Projects";
+import Python_Projects from "./pages/Python_Projects";
 import '../../src/style.css'
 import { useState } from "react";
 
@@ -60,6 +64,10 @@ const [menuOpen, setMenuOpen] = useState(false);
             <Route path="/projects" element={<Projects />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/other-projects" element={<Other_Projects />} />
+            <Route path="/company-projects" element={<Company_Projects />} />
+            <Route path="/javascript-projects" element={<JS_Projects />} />
+            <Route path="/python-projects" element={<Python_Projects />} />
           </Routes>
         </main>
 

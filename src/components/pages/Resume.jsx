@@ -4,75 +4,79 @@ import bano_qabil from '../../../public/bano_qabil.png'
 function Resume() {
   return (
   
-    <>
-      <div className="row g-4 m-3">
-  
-  <div className="col-md-4">
-    <div className="card  h-100">
-      <img 
-        src={bitknox} 
-        className="card-img-top" 
-        alt="Bitknox"
-        style={{ height: "100%", objectFit: "cover" }}
-      />
-      <div className="card-body">
-        <h4 className="card-title">
-          Full Stack Developer 
-          <span className="text-muted fs-6"> (Bitknox Global)</span>
-        </h4>
-        <hr />
-        <p className="card-text">
-          I learned React.js for frontend and PHP Laravel for backend. I developed a complete CRUD system for the HR module and implemented company stats and attendance dashboards using graphs and charts UI.
-        </p>
+   <>
+      <div className="container my-5 ">
+  <div className="row g-4 justify-content-center">
+
+    {/* Card 1 */}
+    <div className="col-12 col-sm-6 col-lg-4">
+      <div className="card h-100 shadow-sm border-0 bg-dark text-white">
+        <img 
+          src={bitknox} 
+          className="card-img-top " 
+          alt="Bitknox"
+          style={{ height: "80%", objectFit: "cover" }}
+        />
+        <div className="card-body text-center ">
+          <h5 className="card-title">
+            Full Stack Developer 
+            <span className="text-light fs-6 d-block">(Bitknox Global)</span>
+          </h5>
+          <hr />
+          <p className="card-text small">
+            Developed HR module CRUD system using React.js & Laravel, including dashboards for attendance and company stats.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
-<div className="col-md-4">
-    <div className="card shadow-sm h-100">
-      <img 
-        src={bano_qabil} 
-        className="card-img-top" 
-        alt="Bitknox"
-        style={{ height: "78%", objectFit: "cover" }}
-      />
-      <div className="card-body">
-        <h4 className="card-title">
-          React.js Developer 
-          <span className="text-muted fs-6"> (Alkhidmat Foundation)</span>
-        </h4>
-        <hr />
-        <p className="card-text">
-          I learned React.js for frontend and developed my portfolio website alongwith multiple high-end projects which involves integrating third-party APIs. 
-        </p>
+    {/* Card 2 */}
+    <div className="col-12 col-sm-6 col-lg-4">
+      <div className="card h-100 shadow-sm border-0 bg-dark text-white">
+        <img 
+          src={bano_qabil} 
+          className="card-img-top p-1" 
+          alt="Bano Qabil"
+          style={{ height: "80%", objectFit: "cover" }}
+        />
+        <div className="card-body text-center">
+          <h5 className="card-title">
+            React Js Developer 
+            <span className="text-light fs-6 d-block">(Alkhidmat Foundation)</span>
+          </h5>
+          <hr />
+          <p className="card-text small">
+            Built portfolio and multiple projects using React with API integrations and modern UI design.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div className="col-md-4">
-    <div className="card h-100 ">
-      <iframe
-  src={bits}
-  title="Bitknox Document"
-  className="card-img-top"
-  style={{ height: "100%", width: "100%", border: "none" }}
-></iframe>
-      <div className="card-body">
-        <h4 className="card-title">
-          Laravel Developer 
-          <span className="text-muted fs-6"> (Business Innovation & Tech Solutions)</span>
-        </h4>
-        <hr />
-        <p className="card-text">
-          I worked in PHP Laravel as a backend developer where I made RESTful APIs for an admin app for the society "Anchorage Islamabad", where admins can see the complaints of residents and set their current status like pending, assigned and resolved.
-        </p>
+    {/* Card 3 */}
+    <div className="col-12 col-sm-6 col-lg-4">
+      <div className="card h-100 shadow-sm border-0 bg-dark text-white">
+        <iframe
+          src={bits}
+          title="BITS Document"
+          className="card-img-top p-1"
+          style={{ height: "80%", width: "100%", border: "none" }}
+        ></iframe>
+        <div className="card-body text-center">
+          <h5 className="card-title">
+            Laravel Developer 
+            <span className="text-light fs-6 d-block">(Business Innovation and Tech Solution)</span>
+          </h5>
+          <hr />
+          <p className="card-text small">
+            Developed RESTful APIs for Anchorage Islamabad admin system to manage resident complaints and statuses.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
+  </div>
 </div>
-      
-    </>
+   </>
   )
 }
 

@@ -3,6 +3,7 @@ import php from '../../assets/php.png'
 import laravel from '../../assets/laravel.png'
 import python from '../../assets/python.jfif'
 import node from '../../assets/node.png'
+import claude from '../../assets/claude.png'
 import django from '../../assets/django.png'
 import mongo from '../../assets/mongo.png'
 import mysql from '../../assets/mysql.png'
@@ -75,6 +76,11 @@ function Skills() {
       <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
         <b>Node JS</b>
         <img src={node} alt="React" className="tech-logo" />
+      </li>
+
+      <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">
+        <b>Claude</b>
+        <img src={claude} alt="CSS" className="tech-logo" />
       </li>
 
       <li className="d-flex align-items-center gap-2 border rounded-pill px-3 py-2 shadow-sm bg-light">

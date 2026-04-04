@@ -13,7 +13,7 @@ function About() {
             src={dp}
             alt="Haroon"
             className=" border border-success rounded-circle img-fluid shadow"
-            style={{ maxWidth: "90%" }}
+            style={{ maxWidth: "80%" }}
           />
         </div>
 
