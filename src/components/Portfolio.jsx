@@ -7,7 +7,7 @@ import { FaUser } from "react-icons/fa";
 import { ImPower } from "react-icons/im";
 import { FaHouse } from "react-icons/fa6";
 import { FaBars } from "react-icons/fa6";
-import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
