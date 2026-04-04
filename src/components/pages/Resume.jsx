@@ -1,6 +1,6 @@
-import bitknox from '../../../public/bit_intern.png'
-import bits from '../../../public/bits.pdf'
-import bano_qabil from '../../../public/bano_qabil.png'
+import '../../../public/bitknox.PNG'
+import '../../../public/bits.pdf'
+import '../../../public/bano_qabil.png'
 function Resume() {
   return (
   
@@ -12,7 +12,7 @@ function Resume() {
     <div className="col-12 col-sm-6 col-lg-4">
       <div className="card h-100 shadow-sm border-0 bg-dark text-white">
         <img 
-          src={bitknox} 
+          src="/bitknox.PNG" 
           className="card-img-top " 
           alt="Bitknox"
           style={{ height: "80%", objectFit: "cover" }}
@@ -34,7 +34,7 @@ function Resume() {
     <div className="col-12 col-sm-6 col-lg-4">
       <div className="card h-100 shadow-sm border-0 bg-dark text-white">
         <img 
-          src={bano_qabil} 
+          src="/bano_qabil.png" 
           className="card-img-top p-1" 
           alt="Bano Qabil"
           style={{ height: "80%", objectFit: "cover" }}
@@ -56,7 +56,7 @@ function Resume() {
     <div className="col-12 col-sm-6 col-lg-4">
       <div className="card h-100 shadow-sm border-0 bg-dark text-white">
         <iframe
-          src={bits}
+          src="/bits.pdf"
           title="BITS Document"
           className="card-img-top p-1"
           style={{ height: "80%", width: "100%", border: "none" }}
