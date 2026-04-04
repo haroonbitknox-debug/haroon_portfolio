@@ -18,14 +18,13 @@ function Projects() {
 
     <Link
     to="/python-projects"
-    target='_blank'
     className='btn btn-info fw-bold d-flex align-items-center justify-content-center fs-5'>
       <img src={python} alt="Python" className="me-2" style={{ width: "40px" }} />
       Python Projects
     </Link>
     <Link 
       to="/javascript-projects" 
-      target='_blank'
+      
       className="btn btn-info fw-bold d-flex align-items-center justify-content-center fs-5"
     >
       <img src={js} alt="Javascript" className="me-2" style={{ width: "40px" }} />
@@ -34,7 +33,7 @@ function Projects() {
 
     <Link 
       to="/company-projects" 
-      target='_blank'
+      
       className="btn btn-info fw-bold d-flex align-items-center justify-content-center fs-5"
     >
       <img src={gear} alt="Other" className="me-2" style={{ width: "40px" }} />
@@ -43,7 +42,7 @@ function Projects() {
 
     <Link 
       to="/other-projects" 
-      target='_blank'
+      
       className="btn btn-info fw-bold d-flex align-items-center justify-content-center fs-5"
     >
       <img src={code} alt="Other" className="me-2" style={{ width: "40px" }} />
