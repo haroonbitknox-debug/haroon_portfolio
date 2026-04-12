@@ -19,19 +19,17 @@ function JS_Projects() {
     
     
     <a 
-      href="/website.zip"
-      
+      href="/javascript-projects.zip"
       download
-      className="btn btn-dark p-3 mt-3"
+      className="btn border border-dark p-3 mt-3"
     >
       <MdDownload /> Projects 
     </a>
 
     <a 
-      href="/javascript-projects.zip"
-      
+     href="/website.zip"      
       download
-      className="btn btn-dark p-3 mt-3"
+      className="btn  border border-dark p-3 mt-3"
     >
       <MdDownload /> E-Notes
     </a>
