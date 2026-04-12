@@ -1,3 +1,4 @@
+import { MdDownload } from "react-icons/md";
 
 function JS_Projects() {
   return (
@@ -11,17 +12,32 @@ function JS_Projects() {
     <h2 className="fw-bold">Core Javascript Projects</h2>
 
     <h5 className="my-3 px-3">
-      I have made 15+ basic projects using core Javascript with notes and code available for download.
+      I have made 15+ basic to advance level projects using core Javascript with notes and code available for download.
     </h5>
 
+<div className="d-flex gap-3">
+    
+    
     <a 
-      href="/javascript-projects.zip"
+      href="/website.zip"
+      
       download
       className="btn btn-dark p-3 mt-3"
     >
-      Download Project Folder
+      <MdDownload /> Projects 
     </a>
 
+    <a 
+      href="/javascript-projects.zip"
+      
+      download
+      className="btn btn-dark p-3 mt-3"
+    >
+      <MdDownload /> E-Notes
+    </a>
+
+    
+</div>
   </div>
 </div>
   )
