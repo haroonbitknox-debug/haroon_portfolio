@@ -1,6 +1,6 @@
 import '../../../public/bitknox.PNG'
 import '../../../public/bits.pdf'
-import '../../../public/bano_qabil.png'
+import '../../../public/banoqabil.jpeg'
 function Resume() {
   return (
   
@@ -34,10 +34,10 @@ function Resume() {
     <div className="col-12 col-sm-6 col-lg-4">
       <div className="card h-100 shadow-sm border-0 bg-dark text-white">
         <img 
-          src="/bano_qabil.png" 
+          src="/banoqabil.jpeg" 
           className="card-img-top p-1" 
           alt="Bano Qabil"
-          style={{ height: "80%", objectFit: "cover" }}
+          style={{ height: "80%", objectFit: "fit" }}
         />
         <div className="card-body text-center">
           <h5 className="card-title">

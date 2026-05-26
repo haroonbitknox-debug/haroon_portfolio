@@ -1,5 +1,5 @@
 import cv from "../../../public/cv.pdf";
-import dp from "../../assets/dp2.png";
+import dp from "../../assets/dp3.jpeg";
 
 function About() {
   return (
@@ -8,12 +8,12 @@ function About() {
       <div className="container my-5 d-flex flex-column flex-md-row align-items-center justify-content-between">
 
         {/* LEFT SIDE: IMAGE */}
-        <div className="text-center mb-4 mb-md-0">
+        <div className="text-center mb-4 mb-md-0" >
           <img
             src={dp}
             alt="Haroon"
-            className=" border border-success rounded-circle img-fluid shadow"
-            style={{ maxWidth: "80%" }}
+            className=" rounded img-fluid"
+            style={{ width: "100%" }}
           />
         </div>
 
@@ -25,9 +25,8 @@ function About() {
             Developer <b className="text-warning">.</b>
           </h1>
           <p className="fs-3 py-2">
-            I'm a seasoned full stack developer with 1+ years of experience,
-            based in Lahore, Pakistan — dedicated to helping you build beautiful
-            websites that your users will love. I’m a tech enthusiast looking for
+            I'm a seasoned full stack developer with 1+ years of experience in <b>MERN, </b>
+            <b>Laravel</b> and <b>Python Programming</b>  — dedicated to helping you build something meaningfull that your users will love. I’m a tech enthusiast looking for
             opportunities to enhance my skill set and gain valuable experience.
 
           </p>
@@ -35,7 +34,7 @@ function About() {
       </div>
 
       {/* BUTTONS SECTION */}
-      <div className="mx-5 px-5">
+      <div className="">
       <div className=" d-flex flex-wrap justify-content-center justify-content-md-start mx-md-5 px-md-5">
         {/* Download CV */}
         <a href={cv} download className="text-decoration-none">
