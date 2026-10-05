@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "../ChatWidget.css";
 
-// Set this to your deployed FastAPI URL (e.g. https://your-app.onrender.com).
-const API_URL =
-  "https://haroon-portfolio-chatbot-git-main-haroons-projects-244629ce.vercel.app/health";
+const API_URL = "https://haroon-portfolio-chatbot.vercel.app";
 
 const STARTERS = [
   "What projects has Haroon built?",
