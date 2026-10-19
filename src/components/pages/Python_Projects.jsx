@@ -1,31 +1,29 @@
-import React from 'react'
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa6";
+import { MdDownload } from "react-icons/md";
 
 function Python_Projects() {
   return (
-   <div className='container mt-5'>
-  <h2 className="text-center fw-bold mb-4">
-    Python Projects <span className="text-warning">.</span>
-  </h2>
-
-  <div className="card bg-light text-dark py-5 mt-5 shadow-lg border-rounded text-center d-flex align-items-center justify-content-center">
-    
-    <h2 className="fw-bold">Core Python Projects</h2>
-
-    <h5 className="my-3 px-3">
-      I have made 15+ basic projects using core Python with notes and code available for download.
-    </h5>
-
-    <a 
-      href="/python-projects.zip"
-      download
-      className="btn btn-dark p-3 mt-3"
-    >
-      Download Project Folder
-    </a>
-
-  </div>
-</div>
-  )
+    <div className="container page-section">
+      <div className="page-head">
+        <h1 className="section-title">
+          Python Projects <span className="dot">.</span>
+        </h1>
+      </div>
+      <div className="download-card">
+        <h2>Core Python Projects</h2>
+        <p>I have made 15+ basic projects using core Python with notes and code available for download.</p>
+        <div className="btn-row">
+          <a href="/python-projects.zip" download className="btn-cta primary">
+            <MdDownload /> Download Project Folder
+          </a>
+          <Link to="/ai-projects" className="btn-cta ghost">
+            See my AI projects <FaArrowRight />
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default Python_Projects
+export default Python_Projects;

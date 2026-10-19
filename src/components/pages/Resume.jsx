@@ -1,83 +1,73 @@
-import '../../../public/bitknox.PNG'
-import '../../../public/bits.pdf'
-import '../../../public/banoqabil.jpeg'
+import { FaChalkboardUser, FaRobot } from "react-icons/fa6";
+
+// Media is optional: use `image` for a photo, or `icon` for a placeholder.
+const EXPERIENCE = [
+  {
+    role: "AI Engineering Program",
+    org: "HCCDA-AI, NAVTTC at UET",
+    text: "Building RAG pipelines, LangChain and FastAPI services, plus ML, NLP and computer vision projects. Currently enrolled.",
+    icon: <FaRobot />,
+  },
+  {
+    role: "Instructor (AI with Python)",
+    org: "Brains College",
+    text: "Taught 40+ lectures from core Python and OOP to NumPy, Pandas and Flask, and guided students to build and deploy Gemini chatbots on Vercel.",
+    icon: <FaChalkboardUser />,
+  },
+  {
+    role: "Full Stack Developer",
+    org: "Bitknox Global",
+    text: "Built the HR management module with React and Laravel: attendance tracking, leave management, HR-only employee CRUD and dashboards for attendance and company stats.",
+    image: "/bitknox.PNG",
+  },
+  {
+    role: "Laravel Developer",
+    org: "Business Innovation and Tech Solutions",
+    text: "Delivered 20+ RESTful APIs for the Anchorage Islamabad admin app, including complaint management with department-based notifications, and cut the website load time from 5s to 2s.",
+    image: "/bits-preview.png",
+    link: { href: "/bits.pdf", label: "View document" },
+  },
+  {
+    role: "React Js Developer",
+    org: "Alkhidmat Foundation (Bano Qabil)",
+    text: "Built this portfolio and multiple projects using React with API integrations and modern UI design, and won first position in the course.",
+    image: "/banoqabil.jpeg",
+  },
+];
+
 function Resume() {
   return (
-  
-   <>
-      <div className="container my-5 ">
-  <div className="row g-4 justify-content-center">
+    <div className="container page-section">
+      <div className="page-head">
+        <h1 className="section-title">
+          Experience <span className="dot">.</span>
+        </h1>
+        <p className="page-lead">Where I've worked, taught and learned.</p>
+      </div>
 
-    {/* Card 1 */}
-    <div className="col-12 col-sm-6 col-lg-4">
-      <div className="card h-100 shadow-sm border-0 bg-dark text-white">
-        <img 
-          src="/bitknox.PNG" 
-          className="card-img-top " 
-          alt="Bitknox"
-          style={{ height: "80%", objectFit: "cover" }}
-        />
-        <div className="card-body text-center ">
-          <h5 className="card-title">
-            Full Stack Developer 
-            <span className="text-light fs-6 d-block">(Bitknox Global)</span>
-          </h5>
-          <hr />
-          <p className="card-text small">
-            Developed HR module CRUD system using React.js & Laravel, including dashboards for attendance and company stats.
-          </p>
-        </div>
+      <div className="xp-grid">
+        {EXPERIENCE.map((x) => (
+          <article className="xp-card" key={x.role + x.org}>
+            {x.image ? (
+              <img className="xp-media" src={x.image} alt={x.org} loading="lazy" />
+            ) : (
+              <div className="xp-media icon" aria-hidden="true">{x.icon}</div>
+            )}
+            <div className="xp-body">
+              <h3>{x.role}</h3>
+              <p className="xp-org">{x.org}</p>
+              <p>{x.text}</p>
+              {x.link && (
+                <a href={x.link.href} target="_blank" rel="noopener noreferrer">
+                  {x.link.label} →
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
       </div>
     </div>
-
-    {/* Card 2 */}
-    <div className="col-12 col-sm-6 col-lg-4">
-      <div className="card h-100 shadow-sm border-0 bg-dark text-white">
-        <img 
-          src="/banoqabil.jpeg" 
-          className="card-img-top p-1" 
-          alt="Bano Qabil"
-          style={{ height: "80%", objectFit: "fit" }}
-        />
-        <div className="card-body text-center">
-          <h5 className="card-title">
-            React Js Developer 
-            <span className="text-light fs-6 d-block">(Alkhidmat Foundation)</span>
-          </h5>
-          <hr />
-          <p className="card-text small">
-            Built portfolio and multiple projects using React with API integrations and modern UI design.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    {/* Card 3 */}
-    <div className="col-12 col-sm-6 col-lg-4">
-      <div className="card h-100 shadow-sm border-0 bg-dark text-white">
-        <iframe
-          src="/bits.pdf"
-          title="BITS Document"
-          className="card-img-top p-1"
-          style={{ height: "80%", width: "100%", border: "none" }}
-        ></iframe>
-        <div className="card-body text-center">
-          <h5 className="card-title">
-            Laravel Developer 
-            <span className="text-light fs-6 d-block">(Business Innovation and Tech Solution)</span>
-          </h5>
-          <hr />
-          <p className="card-text small">
-            Developed RESTful APIs for Anchorage Islamabad admin system to manage resident complaints and statuses.
-          </p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-   </>
-  )
+  );
 }
 
-export default Resume
+export default Resume;

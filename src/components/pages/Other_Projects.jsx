@@ -1,64 +1,35 @@
+import { FaArrowUpRightFromSquare, FaCalculator, FaCloudSun, FaListCheck } from "react-icons/fa6";
+
+const PROJECTS = [
+  { icon: <FaCalculator />, title: "Calculator App", text: "A simple and responsive calculator built using JavaScript with basic arithmetic operations.", href: "https://haroon-calculator.netlify.app/" },
+  { icon: <FaCloudSun />, title: "Weather App", text: "A weather forecasting app that fetches real-time data using API and displays it beautifully.", href: "https://haroon-weather.netlify.app/" },
+  { icon: <FaListCheck />, title: "ToDo App", text: "A task management app with add, delete, and mark-as-complete functionality.", href: "https://haroon-todo.netlify.app/" },
+];
 
 function Other_Projects() {
   return (
-    <div className="container my-5">
-  <h2 className="text-center fw-bold mb-4">
-    Other Projects <span className="text-warning">.</span>
-  </h2>
-
-  <div className="d-flex flex-column gap-4 col-12 col-md-8 mx-auto">
-
-    {/* Project 1 */}
-    <div className="card shadow-sm p-3 border-0">
-      <h4 className="fw-bold">🧮 Calculator App</h4>
-      <p className="mb-2">
-        A simple and responsive calculator built using JavaScript with basic arithmetic operations.
-      </p>
-      <a 
-        href="https://haroon-calculator.netlify.app/" 
-        target="_blank" 
-        rel="noreferrer"
-        className="btn btn-info w-100"
-      >
-        View Project
-      </a>
+    <div className="container page-section">
+      <div className="page-head">
+        <h1 className="section-title">
+          Other Projects <span className="dot">.</span>
+        </h1>
+      </div>
+      <div className="project-grid">
+        {PROJECTS.map((p) => (
+          <article className="project-card" key={p.title}>
+            <span className="icon-box">{p.icon}</span>
+            <h3>{p.title}</h3>
+            <p>{p.text}</p>
+            <div className="card-actions">
+              <a className="btn-cta primary small" href={p.href} target="_blank" rel="noreferrer">
+                View Project <FaArrowUpRightFromSquare />
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
     </div>
-
-    {/* Project 2 */}
-    <div className="card shadow-sm p-3 border-0">
-      <h4 className="fw-bold">🌈 Weather App</h4>
-      <p className="mb-2">
-        A weather forecasting app that fetches real-time data using API and displays it beautifully.
-      </p>
-      <a 
-        href="https://haroon-weather.netlify.app/" 
-        target="_blank" 
-        rel="noreferrer"
-        className="btn btn-info w-100"
-      >
-        View Project
-      </a>
-    </div>
-
-    {/* Project 3 */}
-    <div className="card shadow-sm p-3 border-0">
-      <h4 className="fw-bold">📝 ToDo App</h4>
-      <p className="mb-2">
-        A task management app with add, delete, and mark-as-complete functionality.
-      </p>
-      <a 
-        href="https://haroon-todo.netlify.app/" 
-        target="_blank" 
-        rel="noreferrer"
-        className="btn btn-info w-100"
-      >
-        View Project
-      </a>
-    </div>
-
-  </div>
-</div>
-  )
+  );
 }
 
-export default Other_Projects
+export default Other_Projects;

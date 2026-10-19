@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+import { FaPaperPlane, FaXmark } from "react-icons/fa6";
+import { RiRobot2Fill } from "react-icons/ri";
 import "../ChatWidget.css";
 
-// Keep YOUR real backend URL here: no trailing slash, nothing after .vercel.app
+// Your backend URL: no trailing slash, nothing after .vercel.app
 const API_URL = "https://haroon-portfolio-chatbot.vercel.app";
 
 const STARTERS = [
@@ -13,138 +15,12 @@ const STARTERS = [
 // Messages shown while the answer is being prepared. The phase comes from the server.
 const PHASES = {
   start: ["Reaching the assistant…"],
-  search: [
-    "Fetching details about Haroon…",
-    "Reading his projects…",
-    "Checking his experience…",
-  ],
+  search: ["Fetching details about Haroon…", "Reading his projects…", "Checking his experience…"],
   write: ["Thinking…", "Crafting your answer…", "Putting it together…"],
 };
 
-function Robot({ size = 120, wave = false, className = "" }) {
-  return (
-    <svg
-      className={`cw-robot${wave ? " cw-wave-on" : ""} ${className}`}
-      width={size}
-      height={size * 1.1}
-      viewBox="0 0 200 220"
-      aria-hidden="true"
-    >
-      {/* antenna */}
-      <line
-        x1="100"
-        y1="40"
-        x2="100"
-        y2="22"
-        stroke="#212529"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
-      <circle
-        className="cw-antenna"
-        cx="100"
-        cy="15"
-        r="9"
-        fill="var(--cw-accent)"
-        stroke="#212529"
-        strokeWidth="4"
-      />
-      {/* ears */}
-      <rect
-        x="26"
-        y="70"
-        width="16"
-        height="32"
-        rx="7"
-        fill="var(--cw-accent)"
-        stroke="#212529"
-        strokeWidth="4"
-      />
-      <rect
-        x="158"
-        y="70"
-        width="16"
-        height="32"
-        rx="7"
-        fill="var(--cw-accent)"
-        stroke="#212529"
-        strokeWidth="4"
-      />
-      {/* head and face screen */}
-      <rect
-        x="38"
-        y="40"
-        width="124"
-        height="92"
-        rx="34"
-        fill="#fff"
-        stroke="#212529"
-        strokeWidth="4"
-      />
-      <rect x="54" y="58" width="92" height="58" rx="24" fill="#212529" />
-      <ellipse className="cw-eye" cx="80" cy="84" rx="8" ry="10" fill="#fff" />
-      <ellipse className="cw-eye" cx="120" cy="84" rx="8" ry="10" fill="#fff" />
-      <path
-        d="M86 100 Q100 111 114 100"
-        fill="none"
-        stroke="#fff"
-        strokeWidth="4"
-        strokeLinecap="round"
-      />
-      {/* neck */}
-      <rect x="88" y="132" width="24" height="12" fill="#212529" />
-      {/* arms (right one waves) */}
-      <rect
-        x="34"
-        y="152"
-        width="18"
-        height="44"
-        rx="9"
-        fill="var(--cw-accent)"
-        stroke="#212529"
-        strokeWidth="4"
-      />
-      <rect
-        className="cw-arm"
-        x="148"
-        y="152"
-        width="18"
-        height="44"
-        rx="9"
-        fill="var(--cw-accent)"
-        stroke="#212529"
-        strokeWidth="4"
-      />
-      {/* body */}
-      <rect
-        x="58"
-        y="142"
-        width="84"
-        height="58"
-        rx="22"
-        fill="#fff"
-        stroke="#212529"
-        strokeWidth="4"
-      />
-      <circle
-        cx="100"
-        cy="171"
-        r="10"
-        fill="var(--cw-accent)"
-        stroke="#212529"
-        strokeWidth="3"
-      />
-      <circle cx="100" cy="171" r="3.5" fill="#fff" />
-      {/* feet */}
-      <rect x="70" y="200" width="22" height="12" rx="6" fill="#212529" />
-      <rect x="108" y="200" width="22" height="12" rx="6" fill="#212529" />
-    </svg>
-  );
-}
-
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
-  const [greeted, setGreeted] = useState(false); // hides the speech bubble after first open
   const [messages, setMessages] = useState([]); // {role, content, sources?, error?}
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
@@ -157,6 +33,13 @@ export default function ChatWidget() {
   // Wake a sleeping server as soon as the page loads.
   useEffect(() => {
     fetch(`${API_URL}/health`).catch(() => {});
+  }, []);
+
+  // Lets other pages open the chat: window.dispatchEvent(new Event("open-chat"))
+  useEffect(() => {
+    const handler = () => setOpen(true);
+    window.addEventListener("open-chat", handler);
+    return () => window.removeEventListener("open-chat", handler);
   }, []);
 
   useEffect(() => {
@@ -174,11 +57,6 @@ export default function ChatWidget() {
     if (open) setTimeout(() => inputRef.current?.focus(), 50);
   }, [open]);
 
-  function openChat() {
-    setOpen(true);
-    setGreeted(true);
-  }
-
   const lines = PHASES[phase] || PHASES.start;
   const statusText =
     phase === "start" && slow
@@ -189,14 +67,8 @@ export default function ChatWidget() {
     const question = text.trim();
     if (!question || busy) return;
 
-    const history = messages
-      .slice(-6)
-      .map(({ role, content }) => ({ role, content }));
-    setMessages((m) => [
-      ...m,
-      { role: "user", content: question },
-      { role: "assistant", content: "" },
-    ]);
+    const history = messages.slice(-6).map(({ role, content }) => ({ role, content }));
+    setMessages((m) => [...m, { role: "user", content: question }, { role: "assistant", content: "" }]);
     setInput("");
     setBusy(true);
     setPhase("start");
@@ -205,9 +77,7 @@ export default function ChatWidget() {
 
     const slowTimer = setTimeout(() => setSlow(true), 4000);
     const patchLast = (fn) =>
-      setMessages((m) =>
-        m.map((msg, i) => (i === m.length - 1 ? fn(msg) : msg)),
-      );
+      setMessages((m) => m.map((msg, i) => (i === m.length - 1 ? fn(msg) : msg)));
 
     try {
       const res = await fetch(`${API_URL}/chat`, {
@@ -215,12 +85,8 @@ export default function ChatWidget() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: question, history }),
       });
-      if (res.status === 429)
-        throw new Error(
-          "You're sending messages too quickly. Wait a minute and try again.",
-        );
-      if (!res.ok || !res.body)
-        throw new Error("The assistant is unavailable right now.");
+      if (res.status === 429) throw new Error("You're sending messages too quickly. Wait a minute and try again.");
+      if (!res.ok || !res.body) throw new Error("The assistant is unavailable right now.");
 
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
@@ -252,11 +118,7 @@ export default function ChatWidget() {
         }
       }
     } catch (err) {
-      patchLast((msg) => ({
-        ...msg,
-        content: msg.content || err.message,
-        error: true,
-      }));
+      patchLast((msg) => ({ ...msg, content: msg.content || err.message, error: true }));
     } finally {
       clearTimeout(slowTimer);
       setSlow(false);
@@ -274,26 +136,20 @@ export default function ChatWidget() {
           onKeyDown={(e) => e.key === "Escape" && setOpen(false)}
         >
           <header className="cw-header">
-            <div className="cw-avatar">
-              <Robot size={44} />
-            </div>
+            <span className="cw-avatar"><RiRobot2Fill /></span>
             <div className="cw-title">
               <strong>Haroon's Assistant</strong>
               <span>Answers come from his resume and projects</span>
             </div>
-            <button
-              className="cw-icon-btn"
-              onClick={() => setOpen(false)}
-              aria-label="Close chat"
-            >
-              ×
+            <button className="cw-icon-btn" onClick={() => setOpen(false)} aria-label="Close chat">
+              <FaXmark />
             </button>
           </header>
 
           <div className="cw-messages" aria-live="polite">
             {messages.length === 0 && (
               <div className="cw-empty">
-                <Robot size={128} wave />
+                <span className="cw-empty-icon"><RiRobot2Fill /></span>
                 <h3>Hi, I'm Haroon's assistant</h3>
                 <p>Ask me about his projects, skills, or experience.</p>
                 {STARTERS.map((s) => (
@@ -308,32 +164,17 @@ export default function ChatWidget() {
               const isLast = i === messages.length - 1;
               if (m.role === "assistant" && !m.content && busy && isLast) {
                 return (
-                  <div
-                    key={i}
-                    className="cw-msg cw-assistant cw-typing"
-                    role="status"
-                  >
-                    <span className="cw-dots">
-                      <i />
-                      <i />
-                      <i />
-                    </span>
-                    <span key={statusText} className="cw-status">
-                      {statusText}
-                    </span>
+                  <div key={i} className="cw-msg cw-assistant cw-typing" role="status">
+                    <span className="cw-dots"><i /><i /><i /></span>
+                    <span key={statusText} className="cw-status">{statusText}</span>
                   </div>
                 );
               }
               return (
-                <div
-                  key={i}
-                  className={`cw-msg cw-${m.role}${m.error ? " cw-error" : ""}`}
-                >
+                <div key={i} className={`cw-msg cw-${m.role}${m.error ? " cw-error" : ""}`}>
                   <p>{m.content}</p>
                   {m.sources?.length > 0 && m.content && (
-                    <small className="cw-sources">
-                      Sources: {m.sources.join(", ")}
-                    </small>
+                    <small className="cw-sources">Sources: {m.sources.join(", ")}</small>
                   )}
                 </div>
               );
@@ -356,21 +197,15 @@ export default function ChatWidget() {
               maxLength={500}
               aria-label="Your question"
             />
-            <button type="submit" disabled={busy || !input.trim()}>
-              Send
+            <button type="submit" disabled={busy || !input.trim()} aria-label="Send">
+              <FaPaperPlane />
             </button>
           </form>
         </section>
       ) : (
-        <button
-          className="cw-launcher"
-          onClick={openChat}
-          aria-label="Open chat with Haroon's assistant"
-        >
-          {!greeted && (
-            <span className="cw-bubble">Hi! Ask me about Haroon</span>
-          )}
-          <Robot size={132} wave />
+        <button className="cw-launcher" onClick={() => setOpen(true)} aria-label="Open chat with Haroon's assistant">
+          <RiRobot2Fill />
+          <span className="cw-launcher-label">Ask AI</span>
         </button>
       )}
     </div>

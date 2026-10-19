@@ -1,65 +1,66 @@
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
+const PROJECTS = [
+  {
+    title: "HR Management System",
+    org: "Bitknox Global (internship)",
+    text: "Designed and built the HR module: online attendance tracking, leave management, and employee CRUD that only HR can access. React frontend with Laravel APIs and MySQL.",
+    tags: ["React", "Laravel", "MySQL"],
+  },
+  {
+    title: "Bitknox Global Website",
+    org: "Bitknox Global",
+    text: "Designed the Figma UI for the landing page of the company website.",
+    tags: ["Figma", "UI design"],
+    href: "https://bitknoxltd.com/",
+  },
+  {
+    title: "Business Innovation and Tech Solutions Website",
+    org: "BITS",
+    text: "Optimized the company's main website, mostly the Laravel backend.",
+    tags: ["Laravel", "Performance"],
+    href: "https://bitsolution.tech/home",
+  },
+  {
+    title: "Anchorage Islamabad Website and Admin App APIs",
+    org: "BITS",
+    text: "Cut the housing society website's load time from 5s to 2s and upgraded it from Laravel 8 to 10. Delivered 20+ REST APIs for the admin mobile app, plus complaint management, picture upload and bill payment modules.",
+    tags: ["Laravel 10", "REST APIs", "MySQL"],
+    href: "https://anchorageislamabad.com/",
+  },
+];
 
 function Company_Projects() {
   return (
-     <div className="container my-5">
-  <h2 className="text-center fw-bold mb-4">
-    Company Projects <span className="text-warning">.</span>
-  </h2>
-
-  <div className="d-flex flex-column gap-4 col-12 col-md-8 mx-auto">
-
-    {/* Project 1 */}
-    <div className="card shadow-sm p-3 border-0">
-      <h4 className="fw-bold">Bitknox Global</h4>
-      <p className="mb-2">
-        I designed and developed the Figma design UI of the landing page of this website.
-      </p>
-      <a 
-        href="https://bitknoxltd.com/" 
-        target="_blank" 
-        rel="noreferrer"
-        className="btn btn-info w-100"
-      >
-        View Project
-      </a>
+    <div className="container page-section">
+      <div className="page-head">
+        <h1 className="section-title">
+          Company Projects <span className="dot">.</span>
+        </h1>
+      </div>
+      <div className="project-grid">
+        {PROJECTS.map((p) => (
+          <article className="project-card" key={p.title}>
+            <h3>{p.title}</h3>
+            <p className="kicker">{p.org}</p>
+            <p>{p.text}</p>
+            <ul className="tags">
+              {p.tags.map((t) => (
+                <li className="tag" key={t}>{t}</li>
+              ))}
+            </ul>
+            {p.href && (
+              <div className="card-actions">
+                <a className="btn-cta primary small" href={p.href} target="_blank" rel="noreferrer">
+                  View Project <FaArrowUpRightFromSquare />
+                </a>
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
     </div>
-
-    {/* Project 2 */}
-    <div className="card shadow-sm p-3 border-0">
-      <h4 className="fw-bold">Business Innovation and Tech Solutions</h4>
-      <p className="mb-2">
-        I optimized the company's main website code mostly backend side developed in laravel. 
-      </p>
-      <a 
-        href="https://bitsolution.tech/home" 
-        target="_blank" 
-        rel="noreferrer"
-        className="btn btn-info w-100"
-      >
-        View Project
-      </a>
-    </div>
-
-    {/* Project 3 */}
-    <div className="card shadow-sm p-3 border-0">
-      <h4 className="fw-bold">Anchorage Islamabad Admin App</h4>
-      <p className="mb-2">
-        I developed and tested the complete mobile app exclusively designed for anchorage Islamabad admin portal. 
-      </p>
-      <a 
-        href="https://anchorageislamabad.com/" 
-        target="_blank" 
-        rel="noreferrer"
-        className="btn btn-info w-100"
-      >
-        View Project
-      </a>
-    </div>
-
-  </div>
-</div>
-  )
+  );
 }
 
-export default Company_Projects
+export default Company_Projects;
